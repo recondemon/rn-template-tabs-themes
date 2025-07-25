@@ -1,19 +1,17 @@
-const tintColorLight = '#2f95dc';
-const tintColorDark = '#fff';
+import { ThemeType } from "@/context/ThemeContext";
+import { BlackBlueTheme, DefaultTheme } from "./Themes";
 
-export default {
-  light: {
-    text: '#000',
-    background: '#fff',
-    tint: tintColorLight,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorLight,
-  },
-  dark: {
-    text: '#fff',
-    background: '#000',
-    tint: tintColorDark,
-    tabIconDefault: '#ccc',
-    tabIconSelected: tintColorDark,
-  },
+const themeMap: Record<ThemeType, typeof DefaultTheme.colors> = {
+  default: DefaultTheme.colors,
+  blackBlue: BlackBlueTheme.colors,
+};
+
+let activeTheme: ThemeType = "default";
+
+export const setActiveTheme = (theme: ThemeType) => {
+  activeTheme = theme;
+};
+
+export const getColors = () => {
+  return themeMap[activeTheme];
 };

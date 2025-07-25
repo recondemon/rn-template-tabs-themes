@@ -1,5 +1,5 @@
 {
-  "name": "pt-mobile",
+  "name": "rn-template-themes-tabs",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.1.0",
+    "@react-native-picker/picker": "^2.11.1",
     "@react-navigation/native": "^7.1.6",
     "expo": "~53.0.20",
     "expo-font": "~13.3.2",
