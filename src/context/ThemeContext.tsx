@@ -1,6 +1,6 @@
-import { DefaultTheme, BlackBlueTheme } from "@/constants/Themes";
+import { DefaultTheme, BlackBlueTheme } from "@/src/constants/Themes";
 import React, { createContext, useContext, useState } from "react";
-import { setActiveTheme } from "@/constants/Colors";
+import { setActiveTheme } from "@/src/constants/Colors";
 
 export type ThemeType = "default" | "blackBlue";
 
@@ -11,7 +11,11 @@ const ThemeContext = createContext<{
 
 export const useThemeSwitcher = () => useContext(ThemeContext);
 
-export const ThemeProviderCustom = ({ children }: { children: React.ReactNode }) => {
+export const ThemeProviderCustom = ({
+  children,
+}: {
+  children: React.ReactNode;
+}) => {
   const [theme, setThemeState] = useState<ThemeType>("default");
 
   const setTheme = (t: ThemeType) => {
@@ -27,7 +31,10 @@ export const ThemeProviderCustom = ({ children }: { children: React.ReactNode })
 };
 
 const themes: ThemeType[] = ["default", "blackBlue"];
-export const toggleTheme = (currentTheme: ThemeType, setTheme: (t: ThemeType) => void) => {
+export const toggleTheme = (
+  currentTheme: ThemeType,
+  setTheme: (t: ThemeType) => void
+) => {
   const index = themes.indexOf(currentTheme);
   const next = themes[(index + 1) % themes.length];
   setTheme(next);

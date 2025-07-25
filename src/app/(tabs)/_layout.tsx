@@ -2,8 +2,11 @@ import React from "react";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Link, Tabs } from "expo-router";
 import { Pressable } from "react-native";
-import { useClientOnlyValue } from "@/hooks/useClientOnlyValue";
-import { getNavigationTheme, useThemeSwitcher } from "@/context/ThemeContext";
+import { useClientOnlyValue } from "@/src/hooks/useClientOnlyValue";
+import {
+  getNavigationTheme,
+  useThemeSwitcher,
+} from "@/src/context/ThemeContext";
 
 // You can explore the built-in icon families and icons on the web at https://icons.expo.fyi/
 function TabBarIcon(props: {
@@ -23,7 +26,7 @@ export default function TabLayout() {
         tabBarActiveTintColor: navigationTheme.colors.primary,
         tabBarStyle: {
           backgroundColor: navigationTheme.colors.bgSecondary,
-          borderTopColor: navigationTheme.colors.border,    
+          borderTopColor: navigationTheme.colors.border,
         },
         headerStyle: {
           backgroundColor: navigationTheme.colors.bgSecondary,
